@@ -1,0 +1,58 @@
+{
+    "app-id" : "org.theblueoompaloompa.Maps4",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "maps4",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "maps4",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///home/ben/Documents/BuilderProjects/Maps4"
+                }
+            ]
+        },
+        {
+            "name" : "libshumate",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddemos=true",
+                "-Dgtk_doc=false",
+                "-Dvector_renderer=true"
+            ],
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libshumate.git",
+                    "branch" : "main"
+                }
+            ]
+        }
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
+}

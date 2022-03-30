@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Maps4
+Exec=maps4
+Icon=org.theblueoompaloompa.Maps4
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

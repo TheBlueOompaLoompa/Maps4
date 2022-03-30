@@ -1,0 +1,7 @@
+data/org.theblueoompaloompa.Maps4.desktop.in
+data/org.theblueoompaloompa.Maps4.appdata.xml.in
+data/org.theblueoompaloompa.Maps4.gschema.xml
+src/maps4-window.ui
+src/main.c
+src/maps4-window.c
+
